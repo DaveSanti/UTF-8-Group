@@ -6,6 +6,7 @@
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js" defer></script>
     <title>Kirchen in Köln</title>
 </head>
 <body>
@@ -20,15 +21,42 @@
         </div>
         <img src="/img/skyline.jpg" class="w3-border 10px" alt="Logo" width="100%" height="auto">
     </header>
-    <main>
-        <section>
-            
-        </section>
+<main>
+  <!-- Intro -->
+  <section class="w3-container w3-center w3-border w3-danger w3-text-amber">
+    <h2>Kirchen in Köln</h2>
+    <p>Hier siehst du eine Auswahl an Kirchen in Köln</p>
+  </section>
 
+  <!-- Kölner Dom: User Objekt -->
+  <section class="w3-container w3-margin">
+    <div class="w3-bar w3-black w3-padding w3-round-large">
+      <h2>Kölner Dom</h2>
+    </div>
 
+    <div class="w3-card w3-round-large">
+      <div class="w3-row-padding w3-padding">
+        <div class="w3-col l6 m6 s12">
+          <img src="/img/kirchen/koelnerdom.jpg" alt="Kölner Dom" style="width:80%">
+        </div>
 
+        <!-- Ziel für die User Daten -->
+        <div class="w3-col l6 m6 s12">
+          <div id="user-output" class="w3-container w3-padding-16"></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    </main>
+  <!-- Weitere Kirchen: Array of Objects -->
+  <section class="w3-container w3-margin">
+    <div class="w3-container w3-black">
+      <h3>Weitere Kirchen</h3>
+    </div>
+    <div id="contacts-output" class="w3-row-padding w3-padding"></div>
+  </section>
+</main>
+
     <footer>
         <div class="w3-container w3-black w3-large w3-padding">
             <p>Projekt von: David Golomb | </p>

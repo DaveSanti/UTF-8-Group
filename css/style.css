@@ -1,3 +1,9 @@
+/* Element Deklaration */
+
+.runde-ecken {
+    border-radius:15%;
+}
+
 .card {
     position: relative;
     text-align: center;
@@ -23,3 +29,6 @@
     object-fit: cover;
     opacity: 0.5;
 }
+
+/* Einheitliche Kartenhöhe für die drei weiteren Kirchen */
+.church-card .w3-container { min-height: 180px; }
