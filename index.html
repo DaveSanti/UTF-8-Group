@@ -24,30 +24,69 @@
         <section>
             <div class="w3-container w3-center w3-border w3-danger w3-text-amber ">
                 <h2>Willkommen auf unserer Seite!</h2>
-                <p>Entdecken Sie die besten Orte in der Stadt.</p>      
-            </div>
+                <p>Entdecken Sie die besten Orte in der Stadt.</p>     
+                <button onclick="document.getElementById('id01').style.display='block'"
+                class="w3-button w3-padding w3-margin w3-text-amber w3-black">Erfahre mehr über Köln</button>
+        <div id="id01" class="w3-modal">
+  <div class="w3-modal-content">
+    <div class="w3-container">
+      <span onclick="document.getElementById('id01').style.display='none'"
+      class="w3-button w3-display-topright w3-black">&times;</span>
+      <div class="w3-container w3-danger">
+                <h2>Köln – Die Stadt am Rhein</h2>
+                <p>Köln ist eine der ältesten und faszinierendsten Städte Deutschlands. Mit über einer Million Einwohnern vereint die Stadt Geschichte, Kultur und Lebensfreude auf einzigartige Weise. Besonders bekannt ist Köln für seine herzliche Atmosphäre und seine offene, tolerante Gesellschaft, die Besucher aus aller Welt willkommen heißt.</p>
+
+                <div class="w3-margin-top">
+                    <h3>Geschichte und Kultur</h3>
+                    <p>Die Geschichte Kölns reicht mehr als zweitausend Jahre zurück. Gegründet von den Römern unter dem Namen <em>Colonia Claudia Ara Agrippinensium</em> entwickelte sich Köln schnell zu einem bedeutenden Handelszentrum. Heute zeugen zahlreiche Bauwerke von dieser langen Vergangenheit – allen voran der berühmte Kölner Dom, der zum UNESCO-Welterbe zählt und als Wahrzeichen der Stadt gilt.</p>
+                </div>
+
+                <div class="w3-margin-top">
+                    <h3>Sehenswürdigkeiten und Erlebnisse</h3>
+                    <p>Neben dem Dom bietet Köln viele weitere Highlights. Die Altstadt mit ihren schmalen Gassen und bunten Häusern lädt zu Spaziergängen entlang des Rheins ein. Museen wie das Museum Ludwig oder das Römisch-Germanische Museum bieten spannende Einblicke in Kunst und Geschichte. Auch die Hohenzollernbrücke mit ihren Liebesschlössern ist ein beliebtes Ziel für Besucher und Einheimische.</p>
+                </div>
+
+                <div class="w3-margin-top">
+                    <h3>Kölner Lebensart</h3>
+                    <p>Köln ist bekannt für seine lebendige Kneipenkultur und natürlich für den berühmten Karneval, der jedes Jahr Millionen Menschen begeistert. In den vielen Brauhäusern der Stadt wird das typische Kölsch ausgeschenkt – ein helles, obergäriges Bier, das am besten frisch gezapft in geselliger Runde genossen wird. Diese Mischung aus Tradition, Offenheit und Lebensfreude macht den besonderen Charme der Stadt aus.</p>
+                </div>
+
+                <div class="w3-margin-top">
+                    <h3>Fazit</h3>
+                    <p>Ob Geschichte, Kunst oder pure Lebensfreude – Köln bietet für jeden etwas. Wer die Stadt einmal besucht hat, wird schnell verstehen, warum sie als „Herz am Rhein“ gilt und warum ihre Bewohner so stolz auf ihre Heimat sind.</p>
+                </div>
+                </div>
+
+    </div>
+  </div>
+</div>
+                </div>
         </section> 
         <section>
             <div  id="cards" class="w3-row-padding w3-center w3-margin">
             <div class="card w3-text-white w3-col w3-margin" id="card-museen">
                 <h3>Museen</h3>
                      <img src="/img/museen/museumludwig-card.jpg" id="card-image" alt="Museum">
-                     <p>Entdecken Sie die  Museen unserer Stadt.</p>
+                     <a href="/unterseiten/museen.html">
+                     <p>Entdecken Sie die  Museen unserer Stadt.</p></a>
                 </div>
               <div class="card w3-text-white w3-col w3-margin" id="card-parks">
                 <h3>Parks</h3>
                      <img src="/img/parks/flora-card.jpg" id="card-image" alt="Parks">
-                      <p>Genießen Sie die schönsten Parks und Erholungsgebiete.</p>
+                     <a href="/unterseiten/parks.html">
+                      <p>Genießen Sie die schönsten Parks und Erholungsgebiete.</p></a>
                 </div>
                 <div class="card w3-text-white w3-col w3-margin" id="card-kirchen">
                 <h3>Kirchen</h3>
                      <img src="/img/kirchen/koelnerdom-card.jpg" id="card-image" alt="Kirchen">
-                     <p>Besuchen sie die größten Kirchen</p>
+                    <a href="/unterseiten/kirchen.html">
+                     <p>Besuchen sie die größten Kirchen</p></a>
                 </div>
                 <div class="card w3-text-white w3-col w3-margin" id="card-sport">
                 <h3>Sport</h3>
                      <img src="/img/sport/rheinenergiestadion-card.jpg" id="card-image" alt="Sport">
-                      <p>Erleben sie das umfangreiche Sportangebot der Stadt</p>
+                     <a href="/unterseiten/sport.html">
+                      <p>Erleben sie das umfangreiche Sportangebot der Stadt</p></a>
                 </div>
                 </div> 
             </section>
