@@ -11,7 +11,7 @@ const user = {
   ]
 };
 
-function renderUser() {
+    function koelnerdom() {
   const box = document.getElementById("user-output");
   box.innerHTML = `
     <p><strong>Name:</strong> ${user.firstName}</p>
@@ -50,10 +50,9 @@ const contacts = [
   }
 ];
 
-function displayContacts() {
+function displaychurches() {
   const wrap = document.getElementById("contacts-output");
-  if (!wrap) return;
-
+  
   contacts.forEach(item => {
     const col = document.createElement("div");
     col.className = "w3-col l4 m6 s12 w3-margin-bottom";
@@ -76,8 +75,5 @@ function displayContacts() {
   });
 }
 
-// Starten sobald DOM bereit ist
-document.addEventListener("DOMContentLoaded", () => {
-  renderUser();
-  displayContacts();
-});
+  koelnerdom();
+  displaychurches();
