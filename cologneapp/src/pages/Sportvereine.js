@@ -42,7 +42,6 @@ function buildClubList(clubs) {
     a.className = 'w3-bar-item w3-button';
     a.textContent = c.name;
     a.dataset.sport = c.details[0] || '';
-    // compute bezirk from details if possible
     a.dataset.bezirk = guessDistrict(c.details) || '';
     a.dataset.info = c.details.join(' | ');
     li.appendChild(a);
@@ -116,7 +115,6 @@ sports.forEach(sport => {
   sportDropdown.appendChild(link);
 });
 
-// districts list and dropdown population
 const bezirke = ['Alle Bezirke','Chorweiler','Ehrenfeld','Innenstadt' ,'Kalk','Lindenthal','Mülheim','Nippes','Porz','Rodenkirchen'];
 const bezirkDropdown = document.getElementById('bezirkDropdown');
 bezirke.forEach(bz => {
@@ -128,7 +126,6 @@ bezirke.forEach(bz => {
   bezirkDropdown.appendChild(link);
 });
 
-// current selections
 let selectedSport = '';
 let selectedBezirk = '';
 
@@ -148,14 +145,12 @@ function filterClubs() {
   });
 }
 
-// attach click handlers separately for sport and bezirk menus
 const sportLinks = document.querySelectorAll('#sportDropdown .w3-bar-item');
 sportLinks.forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     const chosen = link.getAttribute('value') || link.textContent.trim();
     selectedSport = chosen;
-    // update label button text
     const btn = document.getElementById('sportButton');
     if (btn) btn.textContent = chosen;
     filterClubs();
@@ -178,9 +173,31 @@ const clubList = document.getElementById('clubList');
 if (clubList) {
   clubList.addEventListener('click', e => {
     if (e.target.tagName === 'A') {
+      e.preventDefault();
+      const clubName = e.target.textContent;
       const info = e.target.dataset.info || '';
       const area = document.getElementById('detailArea');
-      if (area) area.textContent = info;
+      if (area) {
+        const details = info.split(' | ').filter(d => d.trim());
+        let html = `<div class="club-details w3-card w3-padding w3-light-gray w3-margin">
+          <h3>${clubName}</h3>`;
+        
+        details.forEach(detail => {
+          const trimmed = detail.trim();
+          if (trimmed.startsWith('http')) {
+            html += `<p><a href="${trimmed}" target="_blank">${trimmed}</a></p>`;
+          } else if (trimmed.includes('@')) {
+            html += `<p><strong>Telefon/Email:</strong> <a href="mailto:${trimmed}">${trimmed}</a></p>`;
+          } else if (/^\d{4,}/.test(trimmed)) {
+            html += `<p><strong>Postleitzahl:</strong> ${trimmed}</p>`;
+          } else {
+            html += `<p>${trimmed}</p>`;
+          }
+        });
+        html += '</div>';
+        area.innerHTML = html;
+        area.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   });
 }
